@@ -23,24 +23,17 @@ export default function Clientes() {
     }
   ];
 
-  const parceiros = [
-    "Supermercado Família",
-    "Rede de Açougues Premium",
-    "Restaurante Tradição",
-    "Churrascaria Gaúcha",
-    "Mercado Central",
-    "Delicatessen Gourmet"
-  ];
+  const parceiros = [ ];
 
   return (
     <section id="clientes" style={{ background: 'var(--bg-section)' }}>
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <h2 style={{ color: 'var(--primary-color)', fontSize: '2.5rem', marginBottom: '1rem' }}>
-            Nossos Clientes e Parceiros
+          <h2 style={{ color: 'var(--primary-color)', fontSize: '2.5rem', marginBottom: '1 rem' }}>
+            Excelência em Cada Parceria
           </h2>
-          <p style={{ fontSize: '1.2rem', maxWidth: '700px', margin: '0 auto', color: 'var(--text-light)' }}>
-            A confiança de nossos clientes é nossa maior conquista. Veja o que dizem sobre nossos produtos e serviços.
+          <p style={{ fontSize: '1.2rem', maxWidth: '700px', margin: '0 auto', color: 'var(--text-light)', textAlign: 'justify', textAlignLast: 'left' }}>
+            Nossos clientes e parceiros são parte essencial de uma jornada de qualidade e inovação. Por meio de relações sólidas e transparentes, garantimos produtos que atendem aos mais altos padrões do setor de frios e embutidos. A confiança estabelecida em cada colaboração fortalece nosso compromisso em entregar soluções consistentes e gerar resultados sustentáveis.
           </p>
         </div>
 
@@ -101,107 +94,6 @@ export default function Clientes() {
 
         {/* Carrossel de Logomarcas dos Clientes */}
         <ClientesCarrossel />
-
-        {/* Principais Parceiros Comerciais */}
-        <div style={{ 
-          background: 'white', 
-          borderRadius: '16px', 
-          padding: '3rem',
-          boxShadow: 'var(--shadow)'
-        }}>
-          <h3 style={{ textAlign: 'center', color: 'var(--primary-color)', marginBottom: '2rem' }}>
-            Tipos de Estabelecimentos Atendidos
-          </h3>
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
-            gap: '2rem',
-            alignItems: 'center'
-          }}>
-            {parceiros.map((parceiro, index) => (
-              <div key={index} style={{
-                background: 'var(--bg-section)',
-                padding: '2rem',
-                borderRadius: '8px',
-                textAlign: 'center',
-                border: '2px dashed var(--primary-color)',
-                color: 'var(--primary-color)',
-                fontWeight: '500'
-              }}>
-                {parceiro}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Certificações */}
-        <div style={{ textAlign: 'center', marginTop: '4rem' }}>
-          <h3 style={{ color: 'var(--primary-color)', marginBottom: '2rem' }}>
-            Certificações e Qualidade
-          </h3>
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', 
-            gap: '2rem',
-            maxWidth: '600px',
-            margin: '0 auto'
-          }}>
-            <div style={{ textAlign: 'center' }}>
-              <div style={{ 
-                background: 'var(--primary-color)', 
-                color: 'white', 
-                borderRadius: '50%', 
-                width: '80px', 
-                height: '80px', 
-                display: 'flex', 
-                alignItems: 'center', 
-                justifyContent: 'center',
-                margin: '0 auto 1rem',
-                fontSize: '2rem'
-              }}>
-                ✓
-              </div>
-              <div style={{ fontWeight: 'bold', color: 'var(--primary-color)' }}>SIM/SIF</div>
-              <div style={{ fontSize: '0.9rem', color: 'var(--text-light)' }}>Inspeção Federal</div>
-            </div>
-            <div style={{ textAlign: 'center' }}>
-              <div style={{ 
-                background: 'var(--primary-color)', 
-                color: 'white', 
-                borderRadius: '50%', 
-                width: '80px', 
-                height: '80px', 
-                display: 'flex', 
-                alignItems: 'center', 
-                justifyContent: 'center',
-                margin: '0 auto 1rem',
-                fontSize: '2rem'
-              }}>
-                ✓
-              </div>
-              <div style={{ fontWeight: 'bold', color: 'var(--primary-color)' }}>HACCP</div>
-              <div style={{ fontSize: '0.9rem', color: 'var(--text-light)' }}>Análise de Perigos</div>
-            </div>
-            <div style={{ textAlign: 'center' }}>
-              <div style={{ 
-                background: 'var(--primary-color)', 
-                color: 'white', 
-                borderRadius: '50%', 
-                width: '80px', 
-                height: '80px', 
-                display: 'flex', 
-                alignItems: 'center', 
-                justifyContent: 'center',
-                margin: '0 auto 1rem',
-                fontSize: '2rem'
-              }}>
-                ✓
-              </div>
-              <div style={{ fontWeight: 'bold', color: 'var(--primary-color)' }}>ISO 9001</div>
-              <div style={{ fontSize: '0.9rem', color: 'var(--text-light)' }}>Gestão da Qualidade</div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

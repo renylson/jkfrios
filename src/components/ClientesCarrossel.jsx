@@ -27,24 +27,38 @@ const ClientesCarrossel = () => {
       borderRadius: '16px', 
       padding: '3rem',
       boxShadow: 'var(--shadow)',
-      marginBottom: '3rem',
+      marginBottom: '1rem',
       overflow: 'hidden'
     }}>
-      <h3 style={{ textAlign: 'center', color: 'var(--primary-color)', marginBottom: '3rem' }}>
+      <h3 style={{ textAlign: 'center', color: 'var(--primary-color)', marginBottom: '2rem' }}>
         Nossos Clientes
       </h3>
       
-      <div className="clientes-carrossel-container">
-        <div className="clientes-carrossel-track">
+      <div className="clientes-carrossel-container" style={{ padding: '2rem 0' }}>
+        <div className="clientes-carrossel-track" style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}>
           {clientesDuplicados.map((cliente, index) => (
-            <div key={index} className="cliente-item">
+            <div key={index} className="cliente-item" style={{
+              width: '10rem',
+              height: '10rem',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '0'
+            }}>
               <img 
                 src={cliente.src} 
                 alt={cliente.alt}
                 style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'contain'
+                  width: '10rem',
+                  height: '10rem',
+                  maxWidth: '100%',
+                  maxHeight: '100%',
+                  objectFit: 'contain',
+                  objectPosition: 'center'
                 }}
               />
             </div>

@@ -11,15 +11,14 @@ const images = [
 ];
 
 const BackgroundSlideshow = ({ 
-  interval = 8000, // Intervalo entre slides em ms (8 segundos para 3 imagens)
-  fadeDuration = 3000 // Duração da transição em ms (3 segundos)
+  interval = 5000,
+  fadeDuration = 3000
 }) => {
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // Precarregar a primeira imagem
     const img = new Image();
     img.onload = () => setIsLoaded(true);
     img.src = images[0];
@@ -50,7 +49,6 @@ const BackgroundSlideshow = ({
           aria-hidden="true"
         />
       ))}
-      {/* Overlay para melhorar legibilidade */}
       <div className="hero-slideshow-overlay"></div>
     </div>
   );
