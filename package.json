@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:bg": "nohup vite --host --port 5173 > dev.log 2>&1 & echo $! > .vite.pid",
+    "dev:log": "tail -f dev.log",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
