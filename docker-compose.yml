@@ -1,16 +1,9 @@
-version: '3.8'
-
 services:
-  jk-frios-website:
+  jkfrios:
     build: .
+    container_name: jkfrios
     ports:
-      - "3000:80"
+      - "3001:3001"
     restart: unless-stopped
     environment:
       - NODE_ENV=production
-    networks:
-      - jk-network
-
-networks:
-  jk-network:
-    driver: bridge
