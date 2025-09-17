@@ -70,7 +70,8 @@ export default function Header() {
               transition: 'height 0.3s ease-out, filter 0.3s ease-out',
               filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))',
               imageRendering: 'auto',
-              maxWidth: '100%'
+              maxWidth: '100%',
+              borderRadius: '50%'
             }} 
           />
         </Link>

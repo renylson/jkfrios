@@ -16,7 +16,7 @@ export default function Footer() {
         }}>
           <div>
             <h4 style={{ color: 'white', marginBottom: '1rem' }}>
-              JK & Frios - Tradição em Embutidos
+              JK & Frios
             </h4>
             <p style={{ color: '#bdc3c7' }}>
               Fábrica de linguiças, frios e embutidos com tradição e qualidade.
@@ -27,9 +27,9 @@ export default function Footer() {
             <h4 style={{ color: 'white', marginBottom: '1rem' }}>
               Contato
             </h4>
-            <p style={{ color: '#bdc3c7' }}>📍 Endereço da Fábrica</p>
-            <p style={{ color: '#bdc3c7' }}>📞 (11) 9999-9999</p>
-            <p style={{ color: '#bdc3c7' }}>✉️ contato@fabrica.com</p>
+            <p style={{ color: '#bdc3c7' }}>📍 Avenida Gleycimara Alves Pereira, 421 - João de Deus - Petrolina-PE - CEP 56316-150</p>
+            <p style={{ color: '#bdc3c7' }}>📞 (87) 98814-5817</p>
+            <p style={{ color: '#bdc3c7' }}>✉️ contato@jkfrios.com.br</p>
           </div>
           
           <div>
@@ -37,8 +37,6 @@ export default function Footer() {
               Horário de Funcionamento
             </h4>
             <p style={{ color: '#bdc3c7' }}>Segunda a Sexta: 8h às 18h</p>
-            <p style={{ color: '#bdc3c7' }}>Sábado: 8h às 12h</p>
-            <p style={{ color: '#bdc3c7' }}>Domingo: Fechado</p>
           </div>
         </div>
         
@@ -48,7 +46,10 @@ export default function Footer() {
           textAlign: 'center'
         }}>
           <p style={{ color: '#bdc3c7', marginBottom: '1rem' }}>
-            &copy; {new Date().getFullYear()} Nome da Fábrica. Todos os direitos reservados.
+            &copy; {new Date().getFullYear()} JK & Frios - Todos os direitos reservados.
+          </p>
+          <p style={{ color: '#bdc3c7', marginBottom: '1rem' }}>
+          Desenvolvido por Renylson Marques (87) 98846-3681.
           </p>
           <p style={{ color: '#95a5a6', fontSize: '0.9rem' }}>
             <strong>Política de Privacidade:</strong> Este site segue as diretrizes da LGPD. 

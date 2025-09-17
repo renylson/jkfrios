@@ -14,82 +14,20 @@ export default function HomePage() {
       <section style={{ background: 'var(--bg-section)', position: 'relative', overflow: 'hidden' }}>
         <div className="decorative-element top-right"></div>
         <div className="container">
-          <div className="animate-scale-in" style={{ textAlign: 'center', marginBottom: '4rem' }}>
+          <div className="animate-scale-in" style={{ textAlign: 'center', marginBottom: '1rem' }}>
             <span className="badge animate-bounce-in">Qualidade Garantida</span>
             <h2 className="gradient-text gradient-animated animate-slide-in-up" style={{ animationDelay: '0.2s' }}>Por que escolher a JK & Frios?</h2>
             <p className="animate-slide-in-up" style={{ 
-              fontSize: '1.2rem', 
-              maxWidth: '600px', 
-              margin: '0 auto',
-              animationDelay: '0.4s'
+              fontSize: '1.1rem', 
+              maxWidth: '1000px', 
+              margin: '3rem auto',
+              animationDelay: '0.4s',
+              lineHeight: '1.6',
+              textAlign: 'justify',
+              textAlignLast: 'center'
             }}>
-              Mais de 30 anos de tradição em produzir os melhores embutidos da região
+              Escolher a JK & Frios é optar por tradição, qualidade e confiança. Com mais de 9 anos de experiência, produzimos frios e produtos de carne com rigor técnico, dedicação e atenção a cada detalhe. Nossa empresa valoriza parcerias sólidas, atendimento próximo aos clientes e soluções que unem inovação e sabor. Cada produto reflete nosso compromisso com excelência e segurança alimentar, garantindo sempre o melhor para mesas e negócios da região.
             </p>
-          </div>
-          
-          <div className="grid grid-3">
-            <div className="card hover-lift stagger-animation">
-              <div className="animate-rotate-in" style={{ 
-                background: 'var(--primary-color)', 
-                borderRadius: '50%', 
-                width: '80px', 
-                height: '80px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                margin: '0 auto 1.5rem',
-                fontSize: '2rem',
-                animationDelay: '0.3s'
-              }}>
-                🏭
-              </div>
-              <h3 style={{ textAlign: 'center', color: 'var(--primary-color)' }}>Produção Artesanal</h3>
-              <p style={{ textAlign: 'center' }}>
-                Processo tradicional com ingredientes selecionados e receitas familiares
-              </p>
-            </div>
-            
-            <div className="card hover-lift stagger-animation">
-              <div className="animate-rotate-in" style={{ 
-                background: 'var(--gold-color)', 
-                borderRadius: '50%', 
-                width: '80px', 
-                height: '80px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                margin: '0 auto 1.5rem',
-                fontSize: '2rem',
-                animationDelay: '0.5s'
-              }}>
-                ✓
-              </div>
-              <h3 style={{ textAlign: 'center', color: 'var(--primary-color)' }}>Qualidade Certificada</h3>
-              <p style={{ textAlign: 'center' }}>
-                Certificações SIF, HACCP e ISO 9001 garantem a máxima qualidade
-              </p>
-            </div>
-            
-            <div className="card hover-lift stagger-animation">
-              <div className="animate-rotate-in" style={{ 
-                background: 'var(--accent-color)', 
-                borderRadius: '50%', 
-                width: '80px', 
-                height: '80px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                margin: '0 auto 1.5rem',
-                fontSize: '2rem',
-                animationDelay: '0.7s'
-              }}>
-                🚚
-              </div>
-              <h3 style={{ textAlign: 'center', color: 'var(--primary-color)' }}>Entrega Rápida</h3>
-              <p style={{ textAlign: 'center' }}>
-                Logística própria garante produtos frescos entregues no prazo
-              </p>
-            </div>
           </div>
         </div>
       </section>

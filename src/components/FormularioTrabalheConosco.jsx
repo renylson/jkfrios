@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 const FormularioTrabalheConosco = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +11,9 @@ const FormularioTrabalheConosco = () => {
     curriculo: null
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+  const [statusMessage, setStatusMessage] = useState('');
+
   const handleChange = (e) => {
     const { name, value, files } = e.target;
     setFormData(prev => ({
@@ -18,11 +22,46 @@ const FormularioTrabalheConosco = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Aqui você pode implementar o envio do formulário
-    console.log('Dados do formulário:', formData);
-    alert('Currículo enviado com sucesso! Entraremos em contato em breve.');
+    setIsLoading(true);
+    setStatusMessage('');
+
+    try {
+      // Preparar dados para EmailJS
+      const templateParams = {
+        to_name: 'Equipe JK & Frios',
+        from_name: formData.nome,
+        from_email: formData.email,
+        telefone: formData.telefone,
+        cargo: formData.cargo || 'Não especificado',
+        message: formData.experiencia || 'Nenhuma mensagem adicional',
+        reply_to: formData.email
+      };
+
+      // Configurar suas chaves EmailJS aqui
+      const SERVICE_ID = 'your_service_id'; // Configure no EmailJS
+      const TEMPLATE_ID = 'your_template_id'; // Configure no EmailJS  
+      const PUBLIC_KEY = 'your_public_key'; // Configure no EmailJS
+
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
+
+      setStatusMessage('✅ Currículo enviado com sucesso! Entraremos em contato em breve.');
+      setFormData({
+        nome: '',
+        email: '',
+        telefone: '',
+        cargo: '',
+        experiencia: '',
+        curriculo: null
+      });
+
+    } catch (error) {
+      console.error('Erro ao enviar email:', error);
+      setStatusMessage('❌ Erro ao enviar. Tente novamente ou use nosso WhatsApp.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -165,7 +204,6 @@ const FormularioTrabalheConosco = () => {
               >
                 <option value="">Selecione uma área</option>
                 <option value="producao">Produção</option>
-                <option value="qualidade">Controle de Qualidade</option>
                 <option value="vendas">Vendas</option>
                 <option value="administrativo">Administrativo</option>
                 <option value="manutencao">Manutenção</option>
@@ -173,7 +211,7 @@ const FormularioTrabalheConosco = () => {
               </select>
             </div>
 
-            {/* Experiência */}
+            {/* Mensagem */}
             <div>
               <label style={{ 
                 display: 'block', 
@@ -181,7 +219,7 @@ const FormularioTrabalheConosco = () => {
                 fontWeight: '600',
                 color: 'var(--text-dark)'
               }}>
-                Conte um pouco sobre sua experiência
+                Deixe sua mensagem
               </label>
               <textarea
                 name="experiencia"
@@ -243,31 +281,54 @@ const FormularioTrabalheConosco = () => {
               </div>
             </div>
 
+            {/* Status Message */}
+            {statusMessage && (
+              <div style={{
+                padding: '12px 16px',
+                borderRadius: '8px',
+                backgroundColor: statusMessage.includes('✅') ? '#d4edda' : '#f8d7da',
+                color: statusMessage.includes('✅') ? '#155724' : '#721c24',
+                border: `1px solid ${statusMessage.includes('✅') ? '#c3e6cb' : '#f5c6cb'}`,
+                fontSize: '0.95rem',
+                textAlign: 'center'
+              }}>
+                {statusMessage}
+              </div>
+            )}
+
             {/* Botão de Envio */}
             <button
               type="submit"
+              disabled={isLoading}
               style={{
-                background: 'linear-gradient(135deg, var(--primary-color), var(--primary-dark))',
+                background: isLoading 
+                  ? '#6c757d' 
+                  : 'linear-gradient(135deg, var(--primary-color), var(--primary-dark))',
                 color: 'white',
                 border: 'none',
                 padding: '16px 32px',
                 borderRadius: '8px',
                 fontSize: '1.1rem',
                 fontWeight: '600',
-                cursor: 'pointer',
+                cursor: isLoading ? 'not-allowed' : 'pointer',
                 transition: 'all 0.3s ease',
-                marginTop: '1rem'
+                marginTop: '1rem',
+                position: 'relative'
               }}
               onMouseEnter={(e) => {
-                e.target.style.transform = 'translateY(-2px)';
-                e.target.style.boxShadow = '0 8px 25px rgba(139, 69, 19, 0.3)';
+                if (!isLoading) {
+                  e.target.style.transform = 'translateY(-2px)';
+                  e.target.style.boxShadow = '0 8px 25px rgba(139, 69, 19, 0.3)';
+                }
               }}
               onMouseLeave={(e) => {
-                e.target.style.transform = 'translateY(0)';
-                e.target.style.boxShadow = 'none';
+                if (!isLoading) {
+                  e.target.style.transform = 'translateY(0)';
+                  e.target.style.boxShadow = 'none';
+                }
               }}
             >
-              📄 Enviar Currículo
+              {isLoading ? '⏳ Enviando...' : '📄 Enviar Currículo'}
             </button>
           </form>
 

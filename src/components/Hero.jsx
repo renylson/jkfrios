@@ -19,28 +19,30 @@ export default function Hero() {
       
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         <h1 className="animate-slide-in-up" style={{ 
-          fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', 
+          fontSize: 'clamp(1rem, 4vw, 2.5rem)', 
           fontWeight: '700', 
           marginBottom: '1.5rem',
           color: 'white',
           lineHeight: '1.2',
           textShadow: '0 2px 4px rgba(0,0,0,0.3)'
         }}>
-          JK & Frios - Tradição em Embutidos
+          JK & Frios – Qualidade e Confiança em Cada Produto
         </h1>
         <p className="animate-slide-in-up" style={{ 
           fontSize: 'clamp(1rem, 2.5vw, 1.3rem)', 
           marginBottom: '2rem',
           color: 'rgba(255,255,255,0.9)',
-          maxWidth: '700px',
+          maxWidth: '1000px',
           margin: '0 auto 2rem',
-          padding: '0 1rem',
+          padding: '0 3rem',
           lineHeight: '1.6',
+          textAlign: 'justify',
+          textAlignLast: 'center',
           animationDelay: '0.2s'
         }}>
-          Tradição familiar há mais de 30 anos produzindo linguiças artesanais, 
-          frios selecionados e embutidos de alta qualidade. Do campo à sua mesa 
-          com o sabor autêntico que você procura.
+          Combinamos tradição, inovação e rigor no processo de produção para oferecer 
+          frios e embutidos de alto padrão. Nossa missão é entregar sabor, segurança 
+          e excelência que fortalecem a confiança de clientes e parceiros em todo o mercado.
         </p>
         <div className="animate-slide-in-up" style={{ 
           display: 'flex', 
