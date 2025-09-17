@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  jk-frios-website:
+    build: .
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    networks:
+      - jk-network
+
+networks:
+  jk-network:
+    driver: bridge
