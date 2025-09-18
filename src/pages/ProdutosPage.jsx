@@ -1,11 +1,12 @@
+
 import React from 'react';
-import Produtos from '../components/Produtos';
 
 export default function ProdutosPage() {
+
   return (
     <div className="page-transition">
       {/* Header da página */}
-      <section className="gradient-bg" style={{ padding: '80px 0 80px', textAlign: 'center', color: 'white' }}>
+      <section className="gradient-bg" style={{ padding: '20px 0 20px', textAlign: 'center', color: 'white' }}>
         <div className="container">
           <span className="badge" style={{ background: 'rgba(255,255,255,0.2)', color: 'white' }}>
             Nossos Produtos
@@ -19,7 +20,27 @@ export default function ProdutosPage() {
         </div>
       </section>
 
-      <Produtos />
+      {/* Produtos em uso */}
+      <section id="produtos" style={{ background: 'var(--bg-light)' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <h2 style={{ color: 'var(--primary-color)', fontSize: '2.5rem', marginBottom: '1rem' }}>
+              Linha de Qualidade JK & Frios
+            </h2>
+            <p style={{ fontSize: '1.2rem', maxWidth: '1000px', margin: '0 auto', color: 'var(--text-light)' }}>
+              Conheça nossa linha de produtos, todos elaborados com ingredientes selecionados e produzidos com 
+              cuidado e dedicação. Garantimos sabor, frescor e excelência em cada etapa, oferecendo qualidade 
+              que você pode confiar.
+            </p>
+          </div>
+          {/* Lista de produtos removida. Adicione conteúdo estático ou personalizado aqui se desejar. */}
+          <div style={{ textAlign: 'center' }}>
+            <a href="#contato" className="btn" style={{ background: 'var(--gold-color)', color: 'var(--text-dark)' }}>
+              Entre em contato conosco
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* Seção de Processo de Produção */}
       <section style={{ background: 'var(--bg-section)' }}>
@@ -30,16 +51,22 @@ export default function ProdutosPage() {
               Conheça como produzimos nossos frios e embutidos com qualidade, cuidado e tradição.
             </p>
           </div>
-          
-          <div className="grid grid-2">
+          <div style={{ 
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+            gap: '2rem'
+          }}>
             {[
               { step: '01', title: 'Seleção', desc: 'Carnes nobres e ingredientes de primeira qualidade, escolhidos para garantir sabor e segurança.' },
               { step: '02', title: 'Preparo', desc: 'Moagem, tempero e combinação de ingredientes seguindo receitas tradicionais e padrões rigorosos.' },
               { step: '03', title: 'Produção', desc: 'Processo artesanal aplicado a frios e embutidos, garantindo textura, sabor e preservação ideais.' },
               { step: '04', title: 'Embalagem', desc: 'Produtos cuidadosamente embalados para manter frescor, higiene e qualidade até chegar ao consumidor.' }
             ].map((item, index) => (
-              <div key={index} className="card animate-fade-in-up" style={{ 
-                animationDelay: `${index * 0.1}s`,
+              <div key={index} style={{ 
+                background: 'white',
+                borderRadius: '12px',
+                padding: '2rem',
+                boxShadow: 'var(--shadow)',
                 textAlign: 'center',
                 position: 'relative',
                 maxWidth: '400px',

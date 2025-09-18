@@ -128,7 +128,6 @@ export default function Header() {
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           style={{
             display: 'none',
-            '@media (max-width: 768px)': { display: 'block' },
             background: 'none',
             border: 'none',
             fontSize: '1.5rem',

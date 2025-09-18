@@ -1,15 +1,134 @@
+
 import React from 'react';
-import Hero from '../components/Hero';
-import Sobre from '../components/Sobre';
+import linguica01 from '../assets/linguica01.jpg';
+import linguica02 from '../assets/linguica02.jpg';
+import linguica03 from '../assets/linguica03.jpg';
 import logoMedio from '../assets/logo_medio.png';
 
 export default function HomePage() {
+  // BackgroundSlideshow
+  const images = [linguica01, linguica02, linguica03];
+  const interval = 5000;
+  const fadeDuration = 3000;
+  const [currentSlide, setCurrentSlide] = React.useState(0);
+  const [isLoaded, setIsLoaded] = React.useState(false);
+
+  React.useEffect(() => {
+    const img = new window.Image();
+    img.onload = () => setIsLoaded(true);
+    img.src = images[0];
+  }, []);
+
+  React.useEffect(() => {
+    if (!isLoaded) return;
+    const slideInterval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % images.length);
+    }, interval);
+    return () => clearInterval(slideInterval);
+  }, [interval, isLoaded]);
+
+  // Sobre
+  const sobreTitulo = "JK & Frios: Tradição, Qualidade e Confiança";
+  const sobreTexto = "Somos uma empresa especializada na produção de frios e embutidos de alta qualidade, com mais de 9 anos de experiência no mercado. Nossa missão é oferecer produtos saborosos, seguros e inovadores, sempre prezando pela excelência e pelo atendimento próximo aos nossos clientes.";
+
   return (
     <div className="page-transition" style={{ position: 'relative', overflow: 'hidden' }}>
-      
-      <Hero />
-      <Sobre />
-      
+      {/* Hero Section */}
+      <section className="hero-section" style={{ 
+        background: 'linear-gradient(135deg, var(--primary-color), var(--primary-dark))', 
+        color: '#fff', 
+        padding: '140px 0 80px 0',
+        textAlign: 'center',
+        position: 'relative',
+        overflow: 'hidden',
+        borderRadius: '30px 30px 0 0',
+        margin: '80px 20px 40px 20px',
+        boxShadow: '0 10px 30px rgba(0,0,0,0.1)'
+      }}>
+        {/* Slideshow de fundo apenas para o Hero */}
+        {isLoaded && (
+          <div className="hero-slideshow">
+            {images.map((image, index) => (
+              <div
+                key={index}
+                className={`hero-slide ${index === currentSlide ? 'active' : ''}`}
+                style={{
+                  backgroundImage: `url(${image})`,
+                  transitionDuration: `${fadeDuration}ms`
+                }}
+                aria-hidden="true"
+              />
+            ))}
+            <div className="hero-slideshow-overlay"></div>
+          </div>
+        )}
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+          <h1 className="animate-slide-in-up" style={{ 
+            fontSize: 'clamp(1rem, 4vw, 2.5rem)', 
+            fontWeight: '700', 
+            marginBottom: '1.5rem',
+            color: 'white',
+            lineHeight: '1.2',
+            textShadow: '0 2px 4px rgba(0,0,0,0.3)'
+          }}>
+            JK & Frios – Qualidade e Confiança em Cada Produto
+          </h1>
+          <p className="animate-slide-in-up" style={{ 
+            fontSize: 'clamp(1rem, 2.5vw, 1.3rem)', 
+            marginBottom: '2rem',
+            color: 'rgba(255,255,255,0.9)',
+            maxWidth: '1000px',
+            margin: '0 auto 2rem',
+            padding: '0 3rem',
+            lineHeight: '1.6',
+            textAlign: 'justify',
+            textAlignLast: 'center',
+            animationDelay: '0.2s'
+          }}>
+            Combinamos tradição, inovação e rigor no processo de produção para oferecer 
+            frios e embutidos de alto padrão. Nossa missão é entregar sabor, segurança 
+            e excelência que fortalecem a confiança de clientes e parceiros em todo o mercado.
+          </p>
+          <div className="animate-slide-in-up" style={{ 
+            display: 'flex', 
+            gap: '1rem', 
+            justifyContent: 'center', 
+            flexWrap: 'wrap',
+            padding: '0 1rem',
+            animationDelay: '0.4s'
+          }}>
+            <a href="#produtos" className="btn hover-lift animate-shimmer" style={{
+              background: 'var(--gold-color)',
+              color: 'var(--text-dark)',
+              fontWeight: '600',
+              fontSize: '1.1rem',
+              padding: '15px 30px',
+              position: 'relative',
+              overflow: 'hidden'
+            }}>
+              Nossos Produtos
+            </a>
+            <a href="#contato" className="btn hover-glow" style={{
+              background: 'transparent',
+              border: '2px solid white',
+              color: 'white',
+              fontSize: '1.1rem',
+              padding: '13px 30px'
+            }}>
+              Entre em Contato
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Sobre Section */}
+      <section className="sobre-section" style={{ background: 'var(--bg-section)', padding: '80px 0', textAlign: 'center' }}>
+        <div className="container">
+          <h2 style={{ color: 'var(--primary-color)', fontSize: '2rem', marginBottom: '2rem' }}>{sobreTitulo}</h2>
+          <p style={{ fontSize: '1.2rem', maxWidth: '900px', margin: '0 auto', color: 'var(--text-light)', lineHeight: '1.6', textAlign: 'justify', textAlignLast: 'center' }}>{sobreTexto}</p>
+        </div>
+      </section>
+
       {/* Seção de Destaques */}
       <section style={{ background: 'var(--bg-section)', position: 'relative', overflow: 'hidden' }}>
         <div className="decorative-element top-right"></div>
@@ -53,7 +172,6 @@ export default function HomePage() {
           <div className="particle"></div>
           <div className="particle"></div>
         </div>
-        
         <div className="container">
           <div className="animate-scale-in" style={{ marginBottom: '3rem' }}>
             <img 
