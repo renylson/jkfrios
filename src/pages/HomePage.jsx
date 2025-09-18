@@ -82,13 +82,13 @@ export default function HomePage() {
           </h2>
           <p className="animate-slide-in-up" style={{ 
             fontSize: '1.2rem', 
-            maxWidth: '600px', 
+            maxWidth: '1000px', 
             margin: '0 auto',
             color: 'var(--text-light)',
             animationDelay: '0.7s'
           }}>
-            Há mais de três décadas, a JK & Frios tem sido sinônimo de qualidade, 
-            tradição e sabor autêntico na produção de linguiças e embutidos.
+            Há mais de 9 anos, a JK & Frios tem sido sinônimo de qualidade, 
+            tradição e sabor autêntico na produção de frios e embutidos de alto padrão.
           </p>
         </div>
       </section>
@@ -109,7 +109,7 @@ export default function HomePage() {
             marginBottom: '2rem',
             animationDelay: '0.4s'
           }}>
-            Entre em contato conosco e descubra por que somos a escolha de centenas de clientes
+            Entre em contato conosco e descubra por que somos a escolha de dezenas de clientes
           </p>
           <div className="animate-slide-in-up" style={{ 
             display: 'flex', 

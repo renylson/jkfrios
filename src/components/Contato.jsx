@@ -10,12 +10,6 @@ export default function Contato() {
     mensagem: ''
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Aqui você implementaria o envio do formulário
-    alert('Mensagem enviada! Entraremos em contato em breve.');
-  };
-
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -26,27 +20,51 @@ export default function Contato() {
   return (
     <section id="contato" style={{ background: 'var(--bg-light)' }}>
       <div className="container">
-        <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <h2 style={{ color: 'var(--primary-color)', fontSize: '2.5rem', marginBottom: '1rem' }}>
-            Entre em Contato
-          </h2>
-          <p style={{ fontSize: '1.2rem', maxWidth: '700px', margin: '0 auto', color: 'var(--text-light)' }}>
-            Estamos prontos para atender você! Entre em contato conosco para pedidos, orçamentos ou informações sobre nossos produtos.
-          </p>
-        </div>
-
         <div style={{ 
           display: 'grid', 
           gridTemplateColumns: '1fr 1fr', 
-          gap: '4rem',
+          gap: '3rem',
           alignItems: 'start'
         }}>
-          {/* Informações de Contato */}
+          {/* Coluna Esquerda - Mapa / Localização */}
+          <div>
+            <h3 style={{ color: 'var(--primary-color)', marginBottom: '1.5rem', fontSize: '1.8rem' }}>
+              Nossa Localização
+            </h3>
+            <div style={{
+              position: 'relative',
+              width: '100%',
+              height: '0',
+              paddingBottom: '70%',
+              borderRadius: '12px',
+              overflow: 'hidden',
+              boxShadow: 'var(--shadow)',
+              background: '#eee'
+            }}>
+              <iframe
+                title="Mapa - JK Frios"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d291.8578766402476!2d-40.53761215873142!3d-9.35825298008468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1spt-BR!2sbr!4v1758141211629!5m2!1spt-BR!2sbr"
+                style={{ position: 'absolute', top:0, left:0, width:'100%', height:'100%', border:0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <div style={{ marginTop: '1rem', fontSize: '0.8rem', color: 'var(--text-light)' }}>
+              Avenida Gleycimara Alves Pereira, 421 - João de Deus - Petrolina-PE - CEP 56316-150
+            </div>
+            <div style={{ margin: '5% 20%', display:'flex', gap:'0.75rem', flexWrap:'wrap' }}>
+              <a href="https://www.google.com/maps/dir//Avenida+Gleycimara+Alves+Pereira,+421,+Petrolina" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ textDecoration:'none', padding:'0.6rem 1rem', fontSize:'0.85rem' }}>Ver Rotas</a>
+              <a href="https://wa.me/5587988145817" target="_blank" rel="noopener noreferrer" className="btn btn-gold" style={{ textDecoration:'none', padding:'0.6rem 1rem', fontSize:'0.85rem' }}>WhatsApp</a>
+              <a href="mailto:contato@jkfrios.com.br" className="btn" style={{ background:'var(--primary-color)', color:'#fff', textDecoration:'none', padding:'0.6rem 1rem', fontSize:'0.85rem' }}>E-mail</a>
+            </div>
+          </div>
+
+          {/* Coluna Direita - Informações de Contato */}
           <div>
             <h3 style={{ color: 'var(--primary-color)', marginBottom: '2rem', fontSize: '1.8rem' }}>
               Informações de Contato
             </h3>
-            
             <div style={{ marginBottom: '2rem' }}>
               <div style={{ 
                 display: 'flex', 
@@ -57,7 +75,7 @@ export default function Contato() {
                 borderRadius: '8px'
               }}>
                 <div style={{ 
-                  background: 'var(--primary-color)', 
+                  background: '#212e3bff', 
                   color: 'white', 
                   borderRadius: '50%', 
                   width: '50px', 
@@ -65,16 +83,16 @@ export default function Contato() {
                   display: 'flex', 
                   alignItems: 'center', 
                   justifyContent: 'center',
-                  marginRight: '1rem',
+                  margin: '10%',
                   fontSize: '1.2rem'
                 }}>
                   📍
                 </div>
                 <div>
                   <div style={{ fontWeight: 'bold', color: 'var(--primary-color)' }}>Endereço</div>
-                  <div style={{ color: 'var(--text-dark)' }}>Rua das Linguiças, 123</div>
-                  <div style={{ color: 'var(--text-dark)' }}>Distrito Industrial - São Paulo, SP</div>
-                  <div style={{ color: 'var(--text-dark)' }}>CEP: 01234-567</div>
+                  <div style={{ color: 'var(--text-dark)' }}>Avenida Gleycimara Alves Pereira, 421</div>
+                  <div style={{ color: 'var(--text-dark)' }}>João de Deus - Petrolina-PE</div>
+                  <div style={{ color: 'var(--text-dark)' }}>CEP: 56316-150</div>
                 </div>
               </div>
 
@@ -87,7 +105,7 @@ export default function Contato() {
                 borderRadius: '8px'
               }}>
                 <div style={{ 
-                  background: 'var(--primary-color)', 
+                  background: '#212e3bff', 
                   color: 'white', 
                   borderRadius: '50%', 
                   width: '50px', 
@@ -95,17 +113,15 @@ export default function Contato() {
                   display: 'flex', 
                   alignItems: 'center', 
                   justifyContent: 'center',
-                  marginRight: '1rem',
+                  margin: '10%',
                   fontSize: '1.2rem'
                 }}>
                   📞
                 </div>
                 <div>
                   <div style={{ fontWeight: 'bold', color: 'var(--primary-color)' }}>Telefones</div>
-                  <div style={{ color: 'var(--text-dark)' }}>📱 (11) 99999-9999 (WhatsApp)</div>
-                  <div style={{ color: 'var(--text-dark)' }}>☎️ (11) 3333-4444 (Fixo)</div>
-                  <div style={{ color: 'var(--text-dark)' }}>📠 (11) 3333-4445 (Fax)</div>
-                </div>
+                  <div style={{ color: 'var(--text-dark)' }}>📱 (87) 98814-5817 (WhatsApp)</div>
+                  </div>
               </div>
 
               <div style={{ 
@@ -117,7 +133,7 @@ export default function Contato() {
                 borderRadius: '8px'
               }}>
                 <div style={{ 
-                  background: 'var(--primary-color)', 
+                  background: '#212e3bff', 
                   color: 'white', 
                   borderRadius: '50%', 
                   width: '50px', 
@@ -125,230 +141,17 @@ export default function Contato() {
                   display: 'flex', 
                   alignItems: 'center', 
                   justifyContent: 'center',
-                  marginRight: '1rem',
+                  margin: '10%',
                   fontSize: '1.2rem'
                 }}>
                   ✉️
                 </div>
                 <div>
-                  <div style={{ fontWeight: 'bold', color: 'var(--primary-color)' }}>E-mails</div>
-                  <div style={{ color: 'var(--text-dark)' }}>📧 contato@fabricajk.com.br</div>
-                  <div style={{ color: 'var(--text-dark)' }}>💼 vendas@fabricajk.com.br</div>
-                  <div style={{ color: 'var(--text-dark)' }}>🛒 pedidos@fabricajk.com.br</div>
+                  <div style={{ fontWeight: 'bold', color: 'var(--primary-color)' }}>E-mail</div>
+                  <div style={{ color: 'var(--text-dark)' }}>📧 contato@jkfrios.com.br</div>
                 </div>
               </div>
             </div>
-
-            <div style={{ 
-              background: 'var(--primary-color)', 
-              color: 'white', 
-              padding: '2rem', 
-              borderRadius: '12px' 
-            }}>
-              <h4 style={{ marginBottom: '1rem', color: 'white' }}>Horário de Funcionamento</h4>
-              <div style={{ display: 'grid', gap: '0.5rem' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span>Segunda a Sexta:</span> <span>06:00 às 18:00</span>
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span>Sábado:</span> <span>06:00 às 14:00</span>
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span>Domingo:</span> <span>Fechado</span>
-                </div>
-              </div>
-              <div style={{ marginTop: '1rem', fontSize: '0.9rem', opacity: 0.9 }}>
-                * Atendimento comercial: Segunda a Sexta das 08:00 às 17:00
-              </div>
-            </div>
-          </div>
-
-          {/* Formulário de Contato */}
-          <div>
-            <h3 style={{ color: 'var(--primary-color)', marginBottom: '2rem', fontSize: '1.8rem' }}>
-              Envie sua Mensagem
-            </h3>
-            
-            <form onSubmit={handleSubmit} style={{ 
-              background: 'var(--bg-section)', 
-              padding: '2rem', 
-              borderRadius: '12px',
-              boxShadow: 'var(--shadow)'
-            }}>
-              <div style={{ marginBottom: '1.5rem' }}>
-                <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold', color: 'var(--primary-color)' }}>
-                  Nome Completo *
-                </label>
-                <input
-                  type="text"
-                  name="nome"
-                  required
-                  value={formData.nome}
-                  onChange={handleChange}
-                  style={{
-                    width: '100%',
-                    padding: '12px',
-                    border: '2px solid #ddd',
-                    borderRadius: '6px',
-                    fontSize: '1rem',
-                    transition: 'border-color 0.3s ease'
-                  }}
-                />
-              </div>
-
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
-                <div>
-                  <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold', color: 'var(--primary-color)' }}>
-                    E-mail *
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    style={{
-                      width: '100%',
-                      padding: '12px',
-                      border: '2px solid #ddd',
-                      borderRadius: '6px',
-                      fontSize: '1rem'
-                    }}
-                  />
-                </div>
-                <div>
-                  <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold', color: 'var(--primary-color)' }}>
-                    Telefone *
-                  </label>
-                  <input
-                    type="tel"
-                    name="telefone"
-                    required
-                    value={formData.telefone}
-                    onChange={handleChange}
-                    style={{
-                      width: '100%',
-                      padding: '12px',
-                      border: '2px solid #ddd',
-                      borderRadius: '6px',
-                      fontSize: '1rem'
-                    }}
-                  />
-                </div>
-              </div>
-
-              <div style={{ marginBottom: '1.5rem' }}>
-                <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold', color: 'var(--primary-color)' }}>
-                  Empresa/Estabelecimento
-                </label>
-                <input
-                  type="text"
-                  name="empresa"
-                  value={formData.empresa}
-                  onChange={handleChange}
-                  style={{
-                    width: '100%',
-                    padding: '12px',
-                    border: '2px solid #ddd',
-                    borderRadius: '6px',
-                    fontSize: '1rem'
-                  }}
-                />
-              </div>
-
-              <div style={{ marginBottom: '1.5rem' }}>
-                <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold', color: 'var(--primary-color)' }}>
-                  Assunto *
-                </label>
-                <select
-                  name="assunto"
-                  required
-                  value={formData.assunto}
-                  onChange={handleChange}
-                  style={{
-                    width: '100%',
-                    padding: '12px',
-                    border: '2px solid #ddd',
-                    borderRadius: '6px',
-                    fontSize: '1rem'
-                  }}
-                >
-                  <option value="">Selecione o assunto</option>
-                  <option value="orcamento">Solicitar Orçamento</option>
-                  <option value="produtos">Informações sobre Produtos</option>
-                  <option value="parceria">Proposta de Parceria</option>
-                  <option value="reclamacao">Reclamação</option>
-                  <option value="outros">Outros</option>
-                </select>
-              </div>
-
-              <div style={{ marginBottom: '2rem' }}>
-                <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold', color: 'var(--primary-color)' }}>
-                  Mensagem *
-                </label>
-                <textarea
-                  name="mensagem"
-                  required
-                  rows="5"
-                  value={formData.mensagem}
-                  onChange={handleChange}
-                  placeholder="Descreva sua solicitação ou dúvida..."
-                  style={{
-                    width: '100%',
-                    padding: '12px',
-                    border: '2px solid #ddd',
-                    borderRadius: '6px',
-                    fontSize: '1rem',
-                    resize: 'vertical'
-                  }}
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="btn"
-                style={{
-                  width: '100%',
-                  background: 'var(--primary-color)',
-                  color: 'white',
-                  padding: '15px',
-                  fontSize: '1.1rem',
-                  fontWeight: 'bold'
-                }}
-              >
-                Enviar Mensagem
-              </button>
-
-              <div style={{ 
-                fontSize: '0.9rem', 
-                color: 'var(--text-light)', 
-                marginTop: '1rem',
-                textAlign: 'center'
-              }}>
-                * Campos obrigatórios. Responderemos em até 24 horas.
-              </div>
-            </form>
-          </div>
-        </div>
-
-        {/* Mapa */}
-        <div style={{ marginTop: '4rem', textAlign: 'center' }}>
-          <h3 style={{ color: 'var(--primary-color)', marginBottom: '2rem' }}>
-            Nossa Localização
-          </h3>
-          <div style={{
-            background: 'var(--bg-section)',
-            height: '300px',
-            borderRadius: '12px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: 'var(--text-light)',
-            fontSize: '1.2rem',
-            border: '2px dashed var(--primary-color)'
-          }}>
-            [Mapa interativo do Google Maps aqui]<br/>
-            <small>Rua das Linguiças, 123 - Distrito Industrial, São Paulo/SP</small>
           </div>
         </div>
       </div>

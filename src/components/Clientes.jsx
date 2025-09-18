@@ -32,7 +32,7 @@ export default function Clientes() {
           <h2 style={{ color: 'var(--primary-color)', fontSize: '2.5rem', marginBottom: '1 rem' }}>
             Excelência em Cada Parceria
           </h2>
-          <p style={{ fontSize: '1.2rem', maxWidth: '700px', margin: '0 auto', color: 'var(--text-light)', textAlign: 'justify', textAlignLast: 'left' }}>
+          <p style={{ fontSize: '1.2rem', maxWidth: '1000px', margin: '2rem auto', color: 'var(--text-light)', textAlign: 'justify', textAlignLast: 'left' }}>
             Nossos clientes e parceiros são parte essencial de uma jornada de qualidade e inovação. Por meio de relações sólidas e transparentes, garantimos produtos que atendem aos mais altos padrões do setor de frios e embutidos. A confiança estabelecida em cada colaboração fortalece nosso compromisso em entregar soluções consistentes e gerar resultados sustentáveis.
           </p>
         </div>
