@@ -78,13 +78,6 @@ npm run dev
 
 ---
 
-## Coisas que fiz e por quê (breve)
-
-- Removi scripts de deploy duplicados e arquivos não necessários para manter o repositório limpo.
-- Mantive o foco em uma experiência de deploy reproducível (Docker + Compose).
-- Documentei o essencial para que qualquer dev consiga rodar o projeto localmente em minutos.
-
----
 
 ## Sobre mim / Contato
 
