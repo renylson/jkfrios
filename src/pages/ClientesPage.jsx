@@ -43,7 +43,7 @@ export default function ClientesPage() {
   return (
     <div className="page-transition">
       {/* Header da página */}
-      <section className="gradient-bg" style={{ padding: '20px 0 20px', textAlign: 'center', color: 'white' }}>
+      <section className="gradient-bg" style={{ padding: '50px 0 20px', textAlign: 'center', color: 'white' }}>
         <div className="container">
           <span className="badge" style={{ background: 'rgba(255,255,255,0.2)', color: 'white' }}>
             Nossos Clientes
