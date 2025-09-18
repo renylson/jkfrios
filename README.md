@@ -1,89 +1,66 @@
-# Olá — sou Renylson, e este é o site JK & Frios
+# JK & Frios — Website
 
-Oi, eu sou o Renylson Marques. Este repositório contém o site institucional que desenvolvi para a JK & Frios, um projeto que uso no meu portfólio para mostrar como eu trabalho com front-end, infraestrutura com Docker e deploy com Nginx.
-
-Este README está escrito como eu escreveria quando explico o projeto para clientes ou recrutadores: simples, direto e com exemplos práticos de como rodar e entender o que foi feito.
+Resumo: este repositório contém o site institucional que desenvolvi para a Fábrica JK & Frios. O projeto apresenta a identidade visual da empresa, páginas institucionais (Home, Produtos, Clientes, Contato, Trabalhe Conosco), formulário de envio de currículo e elementos interativos para melhorar a experiência do usuário.
 
 ---
 
-## O que é esse projeto
+## Visão técnica
 
-É um site institucional (SPA) feito em React + Vite, pensado para ser rápido, responsivo e fácil de manter. Além da parte visual, o projeto vem preparado para produção: containerização com Docker, servidor Nginx e um docker-compose para orquestração local.
+Este é o site institucional que desenvolvi para a Fábrica JK & Frios. Ele apresenta as informações da empresa, os produtos, onde encontrar a fábrica e um formulário para que candidatos possam enviar seus currículos. O layout é limpo, responsivo (funciona bem em celulares e computadores) e pensado para transmitir confiança e profissionalismo.
 
-Principais objetivos:
-- Entregar uma landing institucional clara e responsiva.
-- Facilitar deploy com Docker (multi-stage build).
-- Garantir boas práticas de performance e SEO.
+O site inclui:
+- Página inicial com destaque para a marca e produtos;
+- Página de produtos e processo de produção;
+- Seção com clientes e depoimentos;
+- Contato com mapa, telefone e formulário;
+- Área para envio de currículo com validação básica.
 
----
+Tecnologias principais
+- React (JSX) — arquitetura de componentes e SPA via React Router.
+- Vite — ferramenta de build e dev server para desenvolvimento rápido.
+- Imagens otimizadas e carregamento assíncrono para slides (preload simples).
+- Deploy: preparado para containerização (Dockerfile, docker-compose.yml) e configuração de servidor (nginx.conf).
 
-## Onde eu quis dar atenção técnica
+Estrutura de pastas relevante
+- `src/` — código-fonte do front-end.
+  - `pages/` — páginas principais (HomePage, ProdutosPage, ClientesPage, ContatoPage, TrabalheConoscoPage).
+  - `components/` — componentes reutilizáveis (Header, Footer, Layout, etc.).
+  - `assets/` — imagens e ícones usados no site.
+- `Dockerfile`, `docker-compose.yml`, `nginx.conf` — sinais de preparo para containerização e deploy.
 
-- Performance: uso Vite, code-splitting e lazy-loading para diminuir o tempo de carregamento.
-- Infra: Docker multi-stage para reduzir tamanho da imagem; Nginx para servir os arquivos estáticos com gzip e cache.
-- UX: design mobile-first, navegação simples e formulários com feedback visual.
+Funcionalidades implementadas
+- Navegação SPA com React Router e comportamento de scroll para o topo ao trocar de rota.
+- Formulário de envio de currículo com validação básica de front-end e feedback visual para o usuário.
+- Seções estáticas informativas: processos de produção, linha de produtos, depoimentos e clientes.
+- Estilização moderna com variáveis CSS, sombras e responsividade.
 
----
+Instruções de execução (desenvolvimento)
+1. Instalar dependências:
 
-## Tecnologias
+   npm install
 
-- React 19 + Vite
-- Docker (multi-stage build)
-- Nginx (alpine)
-- Docker Compose
-- ESLint, NPM
+2. Rodar servidor de desenvolvimento:
 
----
+   npm run dev
 
-## Como rodar (modo rápido)
+3. Build para produção:
 
-Com Docker (recomendado):
+   npm run build
 
-```bash
-git clone https://github.com/renylson/jkfrios.git
-cd jkfrios
-# sobe em background
-docker-compose up -d
-# abra no navegador
-http://localhost:3001
-```
+4. Opcional: rodar com Docker (requer Docker instalado):
 
-Modo desenvolvimento (local):
+   docker compose up -d --build
 
-```bash
-git clone https://github.com/renylson/jkfrios.git
-cd jkfrios
-npm install
-npm run dev
-# por padrão o Vite abre em localhost:5173
-```
-
----
-
-## Notas sobre deploy em produção
-
-- Use Nginx Proxy Manager ou um proxy reverso para expor a aplicação com HTTPS.
-- O container serve na porta 3001 por padrão, então direcione o proxy para `:3001`.
-- Recomendo adicionar monitoramento simples (Portainer ou logs do Docker) para acompanhar o comportamento em produção.
-
----
-
-## Estrutura resumida do repositório
-
-- `src/` – código-fonte React
-- `public/` – assets públicos (imagens, favicon)
-- `Dockerfile` – multi-stage para build + nginx
-- `docker-compose.yml` – orquestração local
-- `nginx.conf` – configuração do servidor (SPA fallback, gzip)
-
----
+Observações
+- O formulário de currículos atualmente faz uma simulação de envio no front-end; pode ser integrado com um backend ou serviço de e-mail (EmailJS, servidor próprio) conforme necessidade.
 
 
-## Sobre mim / Contato
-
-Renylson Marques — Desenvolvedor Full Stack
+## Contato 
+Renylson Marques
 - GitHub: https://github.com/renylson
 - LinkedIn: https://www.linkedin.com/in/renylsonmarques/
 - E-mail: renylsonm@gmail.com
 
-Se quiser discutir o projeto, melhorias ou emprego — manda mensagem :)
+
+---
+
